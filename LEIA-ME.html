@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>DAS / CIAA — Documentação</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',sans-serif;background:#f8fafc;color:#1e293b;line-height:1.6;}
+header{background:#0f172a;padding:32px 48px;border-bottom:3px solid #1a56db;}
+header h1{font-family:'Syne',sans-serif;font-size:22px;color:#fff;font-weight:800;}
+header p{font-size:13px;color:#64748b;margin-top:4px;}
+main{max-width:860px;margin:0 auto;padding:40px 32px;}
+
+h2{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;color:#0f172a;margin:36px 0 14px;display:flex;align-items:center;gap:8px;}
+h2::before{content:'';display:inline-block;width:3px;height:18px;background:#1a56db;border-radius:2px;}
+h3{font-size:14px;font-weight:600;color:#334155;margin:18px 0 8px;}
+p{font-size:13.5px;color:#475569;margin-bottom:8px;}
+
+/* TREE */
+.tree{background:#0f172a;border-radius:12px;padding:24px 28px;font-family:'JetBrains Mono',monospace;font-size:13px;line-height:2;color:#94a3b8;margin:16px 0;}
+.tree .folder{color:#60a5fa;font-weight:500;}
+.tree .file{color:#86efac;}
+.tree .file-gs{color:#fbbf24;}
+.tree .file-json{color:#f9a8d4;}
+.tree .comment{color:#475569;font-style:italic;}
+
+/* LINKS */
+.link-card{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:14px 18px;margin:8px 0;text-decoration:none;color:inherit;transition:box-shadow .15s;}
+.link-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.08);}
+.link-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.link-icon.blue{background:#eff6ff;}
+.link-icon.purple{background:#f5f3ff;}
+.link-name{font-weight:600;font-size:13.5px;color:#1e293b;}
+.link-url{font-family:'JetBrains Mono',monospace;font-size:11px;color:#6366f1;margin-top:2px;}
+.link-arrow{margin-left:auto;color:#94a3b8;font-size:18px;}
+
+/* STEPS */
+.steps{counter-reset:step;display:flex;flex-direction:column;gap:12px;margin:12px 0;}
+.step{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px;}
+.step::before{counter-increment:step;content:counter(step);min-width:26px;height:26px;background:#1a56db;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;margin-top:1px;}
+.step p{margin:0;font-size:13px;color:#374151;}
+.step strong{color:#0f172a;}
+
+/* CODE */
+code{background:#f1f5f9;border:1px solid #e2e8f0;border-radius:4px;padding:1px 6px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#be185d;}
+
+/* PASSWORD */
+.pw-box{background:#fefce8;border:1px solid #fde047;border-radius:10px;padding:14px 18px;margin:12px 0;font-size:13px;color:#713f12;}
+.pw-box strong{font-family:'JetBrains Mono',monospace;font-size:15px;color:#92400e;}
+
+/* TABLE */
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px;}
+th{background:#f1f5f9;text-align:left;padding:10px 14px;font-weight:600;color:#374151;border:1px solid #e2e8f0;}
+td{padding:9px 14px;border:1px solid #e2e8f0;color:#475569;vertical-align:top;}
+tr:hover td{background:#f8fafc;}
+
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;}
+.tag-live{background:#dcfce7;color:#15803d;}
+.tag-auto{background:#eff6ff;color:#1d4ed8;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>✈️ DAS / CIAA — Documentação dos Sistemas</h1>
+  <p>Divisão de Admissão e Seleção · Centro de Instrução e Adaptação à Aeronáutica</p>
+</header>
+
+<main>
+
+  <!-- ÁRVORE DE ARQUIVOS -->
+  <h2>Árvore de arquivos</h2>
+  <div class="tree">
+<span class="folder">DAS-CIAA/</span><br>
+├── <span class="file">LEIA-ME.html</span>          <span class="comment">← este arquivo</span><br>
+│<br>
+├── <span class="folder">hub-page/</span>             <span class="comment">← Página principal (hub)</span><br>
+│   └── <span class="file">index.html</span><br>
+│<br>
+└── <span class="folder">liminaristas/</span>         <span class="comment">← Painel de Liminaristas</span><br>
+    ├── <span class="file">index.html</span>          <span class="comment">← página do dashboard</span><br>
+    ├── <span class="file-json">data.json</span>           <span class="comment">← dados atuais (atualizado pelo script)</span><br>
+    └── <span class="file-gs">sync-sheets.gs</span>     <span class="comment">← Apps Script (cola no Google Sheets)</span>
+  </div>
+
+  <!-- PÁGINAS -->
+  <h2>Páginas publicadas</h2>
+
+  <a class="link-card" href="https://juventurelli.github.io/concursos-daas/" target="_blank">
+    <div class="link-icon blue">✈️</div>
+    <div>
+      <div class="link-name">Página Principal — Concursos DAS/CIAA</div>
+      <div class="link-url">https://juventurelli.github.io/concursos-daas/</div>
+    </div>
+    <div class="link-arrow">↗</div>
+  </a>
+
+  <a class="link-card" href="https://juventurelli.github.io/dashboard-liminaristas/" target="_blank">
+    <div class="link-icon purple">⚖️</div>
+    <div>
+      <div class="link-name">Painel — Controle de Liminaristas</div>
+      <div class="link-url">https://juventurelli.github.io/dashboard-liminaristas/</div>
+    </div>
+    <div class="link-arrow">↗</div>
+  </a>
+
+  <!-- SENHA -->
+  <h2>Senha de acesso</h2>
+  <div class="pw-box">
+    🔒 Ambas as páginas usam a mesma senha: <strong>teste</strong><br>
+    <span style="font-size:12px;margin-top:4px;display:block;">A sessão fica aberta até fechar a aba do navegador.</span>
+  </div>
+
+  <!-- COMO FUNCIONA -->
+  <h2>Como funciona o sync automático</h2>
+  <div class="steps">
+    <div class="step"><p>Você atualiza dados na <strong>Planilha Google</strong> (Controle_Liminaristas_Gravidez)</p></div>
+    <div class="step"><p>O <strong>Apps Script</strong> (<code>sync-sheets.gs</code>) roda automaticamente a cada <strong>30 minutos</strong></p></div>
+    <div class="step"><p>O script lê as abas <strong>Liminaristas</strong> e <strong>Gravidez</strong> e converte em JSON</p></div>
+    <div class="step"><p>O JSON é enviado para o <strong>GitHub</strong> como o arquivo <code>data.json</code></p></div>
+    <div class="step"><p>O dashboard carrega o <code>data.json</code> ao abrir — dados sempre atualizados</p></div>
+  </div>
+
+  <!-- REPOSITÓRIOS -->
+  <h2>Repositórios no GitHub</h2>
+  <table>
+    <tr><th>Repositório</th><th>Conteúdo</th><th>Status</th></tr>
+    <tr>
+      <td><code>juventurelli/concursos-daas</code></td>
+      <td>Página hub principal com links para todos os painéis</td>
+      <td><span class="tag tag-live">Publicado</span></td>
+    </tr>
+    <tr>
+      <td><code>juventurelli/dashboard-liminaristas</code></td>
+      <td>Painel de liminaristas + <code>data.json</code> atualizado pelo Apps Script</td>
+      <td><span class="tag tag-live">Publicado</span></td>
+    </tr>
+  </table>
+
+  <!-- COLUNAS -->
+  <h2>Mapeamento de colunas — Planilha → Dashboard</h2>
+
+  <h3>Aba: Liminaristas</h3>
+  <table>
+    <tr><th>Coluna na planilha</th><th>Campo no dashboard</th></tr>
+    <tr><td>INSC</td><td>Inscrição</td></tr>
+    <tr><td>NOME</td><td>Nome</td></tr>
+    <tr><td>EXAME original</td><td>Exame original</td></tr>
+    <tr><td>Exame que participa</td><td>Exame de participação</td></tr>
+    <tr><td>ESPECIALIDADE</td><td>Especialidade</td></tr>
+    <tr><td>SIGLA</td><td>Sigla</td></tr>
+    <tr><td>PROCESSO</td><td>Processo</td></tr>
+    <tr><td>Está nas vagas?</td><td>Nas vagas</td></tr>
+    <tr><td>Ativo / Inativo</td><td>Status (define quem aparece no painel)</td></tr>
+    <tr><td>Direito a matricula?</td><td>Direito à matrícula</td></tr>
+    <tr><td>E-MAIL DO CANDIDATO</td><td>E-mail</td></tr>
+    <tr><td>Telefone</td><td>Telefone</td></tr>
+    <tr><td>VDBP, CI, INSPSAU, EAP, TACF, PPO, PPRM, PHC, Habilitacao a Matricula</td><td>Etapas do processo</td></tr>
+  </table>
+
+  <h3>Aba: Gravidez</h3>
+  <table>
+    <tr><th>Coluna na planilha</th><th>Campo no dashboard</th></tr>
+    <tr><td>NOME</td><td>Nome</td></tr>
+    <tr><td>INSC</td><td>Inscrição</td></tr>
+    <tr><td>EXAME</td><td>Exame</td></tr>
+    <tr><td>ESPECIALIDADE</td><td>Especialidade</td></tr>
+    <tr><td>E-MAIL DO CANDIDATO</td><td>E-mail</td></tr>
+    <tr><td>TERÁ DIREITO À RECONDUÇÃO</td><td>Direito à recondução</td></tr>
+    <tr><td>SITUAÇÃO (2ª coluna)</td><td>Situação final</td></tr>
+    <tr><td>Está nas vagas?</td><td>Nas vagas</td></tr>
+    <tr><td>Acao</td><td>Ação</td></tr>
+    <tr><td>Em qual exame convocar?</td><td>Exame a convocar</td></tr>
+    <tr><td>Status</td><td>Status (Ativo / Inativo)</td></tr>
+  </table>
+
+  <!-- MANUTENÇÃO -->
+  <h2>Como adicionar um novo painel</h2>
+  <div class="steps">
+    <div class="step"><p>Crie o novo dashboard HTML (igual ao de Liminaristas)</p></div>
+    <div class="step"><p>Publique em um novo repositório GitHub e ative o GitHub Pages</p></div>
+    <div class="step"><p>Abra <code>hub-page/index.html</code>, encontre os cards <em>"Novo painel em breve"</em> e substitua pelo novo painel com o link</p></div>
+    <div class="step"><p>Faça commit e push — a página principal atualiza automaticamente</p></div>
+  </div>
+
+  <p style="margin-top:40px;font-size:11px;color:#94a3b8;text-align:center;">Documentação gerada em maio de 2026 · DAS / CIAA</p>
+
+</main>
+</body>
+</html>
